@@ -1,4 +1,5 @@
 #include<iostream>
+#include<iomanip>
 using namespace std;
 class Phanso{
     private:
@@ -42,7 +43,6 @@ Phanso Phanso::operator - (Phanso ps){
     Phanso result(tuso * ps.mauso - ps.tuso* mauso, ps.mauso * mauso);
     return result;
 }
-
 Phanso Phanso::nhan(Phanso ps){
     Phanso result(ps.tuso * tuso, ps.mauso * mauso);
     return result;
@@ -52,7 +52,6 @@ Phanso Phanso::operator * (Phanso ps){
     Phanso result(ps.tuso * tuso, ps.mauso * mauso);
     return result;
 }
-
 Phanso Phanso::chia(Phanso ps){
     Phanso result(tuso * ps.mauso,mauso * ps.tuso);
     return result;
@@ -63,17 +62,19 @@ Phanso Phanso::operator / (Phanso ps){
     return result;
 }
 void Phanso::Xuat(){
-    cout<<float(tuso)/mauso<<endl;
+    cout<<"Ket qua :"<<setprecision(2)<<float(tuso)/mauso<<endl;
 }
 void Phanso::Nhap(){
     cout<<"Nhap tu so : ";cin>>tuso;
     cout<<"Nhap mau so  : ";cin>>mauso;
 }
 int main(int argc, char const *argv[])
-{   
+{   //nhap
+
     //cach 1
     //Phanso a(1,2);
     //Phanso b(3,5);
+
     //cach2
     Phanso a,b,c,d,e,f;
     a.Nhap();
@@ -82,9 +83,12 @@ int main(int argc, char const *argv[])
     d = a-b;
     e = a*b;
     f = a/b;
+
+    //xuat
     c.Xuat();
     d.Xuat();
     e.Xuat();
     f.Xuat();
+
     return 0;
 }
